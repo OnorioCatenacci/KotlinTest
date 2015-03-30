@@ -11,5 +11,7 @@ public class MainActivity : ActionBarActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val t = TimeActivity()
+        val times = t.GetTimesInMajorCities(array("America/New_York_City", "America/Chicago", "America/Denver", "America/Los_Angeles"))
     }
 }
