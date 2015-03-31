@@ -2,5 +2,9 @@
     <string name="app_name">Kotlin Test</string>
 
     <string name="initial_message">Hello world!</string>
+    <string name="tz_name_New_York_City">America/New_York</string>
+    <string name="tz_name_Chicago">America/Chicago</string>
+    <string name="tz_name_Denver">America/Denver</string>
+    <string name="tz_name_Los_Angeles">America/Los_Angeles</string>
     <string name="action_settings">Settings</string>
 </resources>

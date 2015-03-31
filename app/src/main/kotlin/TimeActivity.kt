@@ -9,26 +9,25 @@ import java.util.Locale
 import java.util.Date
 import java.util.TimeZone
 import org.joda.time
+import org.joda.time.DateTime
+import org.joda.time.DateTimeZone
 
 public class TimeActivity{
 
-    private val _cal:GregorianCalendar = GregorianCalendar()
-
     public fun GetTimesInMajorCities(cities:Array<String>):Array<CurrentTime> {
 
-        //Remember the current time zone
-        val currentTimeZone = _cal.getTimeZone()
+
+        //Set a baseline for the date time
+        val utcDateTime = DateTime(DateTimeZone.UTC)
 
         //Build an array of current times for the list of cities passed in
         val timesInCities = Array<CurrentTime>(cities.size(),
                 {i ->
-                _cal.setTimeZone(TimeZone.getTimeZone(cities[i]));
-                CurrentTime(cities[i], _cal.getTime())
+                val dtz:DateTimeZone = DateTimeZone.forID(cities[i]);
+                CurrentTime(cities[i], utcDateTime.toDateTime(dtz))
                 }
         )
 
-        //Restore the current time zone
-        _cal.setTimeZone(currentTimeZone)
         return timesInCities
     }
 }
