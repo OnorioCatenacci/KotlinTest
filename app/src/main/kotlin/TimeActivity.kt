@@ -4,10 +4,6 @@
 
 package com.riis.kotlintest
 
-import java.util.GregorianCalendar
-import java.util.Locale
-import java.util.Date
-import java.util.TimeZone
 import org.joda.time
 import org.joda.time.DateTime
 import org.joda.time.DateTimeZone

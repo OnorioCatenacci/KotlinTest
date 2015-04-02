@@ -4,6 +4,5 @@
 package com.riis.kotlintest
 
 import org.joda.time.DateTime
-import java.util.Date
 
 public data class CurrentTime(val cityName:String = "", val currentTimeInCity: DateTime)
