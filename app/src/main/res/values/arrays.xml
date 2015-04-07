@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tz_list">
+        <item>Eastern</item>
+        <item>Central</item>
+        <item>Mountain</item>
+        <item>Pacific</item>
+    </string-array>
+    <string-array name="tz_list_values">
+        <item>@string/tz_name_New_York_City</item>
+        <item>@string/tz_name_Chicago</item>
+        <item>@string/tz_name_Denver</item>
+        <item>@string/tz_name_Los_Angeles</item>
+    </string-array>
+</resources>
