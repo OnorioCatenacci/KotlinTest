@@ -1,9 +1,11 @@
 package com.riis.kotlintest
 
+import android.content.Intent
 import android.support.v7.app.ActionBarActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
 
 
@@ -20,5 +22,10 @@ public class MainActivity : ActionBarActivity() {
         chi_tv.setText("Time in the " + times[1].cityName + " time zone is " + times[1].currentTimeInCity.toString())
 
 //        val initMsgTextView = getTextView("InitMsg")
+    }
+
+    fun setPreferences(view: View?){
+        val preferencesIntent = Intent(this, javaClass<KotlinTestPreferences>())
+        startActivity(preferencesIntent)
     }
 }
