@@ -16,16 +16,20 @@ public class MainActivity : ActionBarActivity() {
         setContentView(R.layout.activity_main)
         val t = TimeActivity()
         val times = t.GetTimesInMajorCities(array(getString(R.string.tz_name_New_York_City), getString(R.string.tz_name_Chicago), getString(R.string.tz_name_Denver), getString(R.string.tz_name_Los_Angeles)))
-        val nyc_tv:TextView = findViewById(R.id.timeNYC) as TextView
-        nyc_tv.setText("Time in the " + times[0].cityName + " time zone is " + times[0].currentTimeInCity.toString())
-        val chi_tv:TextView = findViewById(R.id.timeChicago) as TextView
-        chi_tv.setText("Time in the " + times[1].cityName + " time zone is " + times[1].currentTimeInCity.toString())
-
-//        val initMsgTextView = getTextView("InitMsg")
+        setTimeMessage(R.id.timeNYC,times,0)
+        setTimeMessage(R.id.timeChicago, times, 1)
     }
 
-    fun setPreferences(view: View?){
+    public fun setPreferences(view: View?){
         val preferencesIntent = Intent(this, javaClass<KotlinTestPreferences>())
         startActivity(preferencesIntent)
+    }
+
+    fun setTimeMessage(viewId:Int, arrayOfTimes:Array<CurrentTime>, cityIdx: Int ){
+        val tv:TextView? = findViewById(viewId) as? TextView
+        val city = arrayOfTimes[cityIdx].cityName
+        val currentTimeInCity = arrayOfTimes[cityIdx].currentTimeInCity
+        val msg = "Time in the $city time zone is $currentTimeInCity"
+        tv?.setText(msg)
     }
 }
