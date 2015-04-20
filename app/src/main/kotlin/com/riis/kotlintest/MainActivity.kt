@@ -1,5 +1,6 @@
 package com.riis.kotlintest
 
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.ActionBarActivity
 import android.os.Bundle
@@ -10,6 +11,10 @@ import android.widget.TextView
 
 
 public class MainActivity : ActionBarActivity() {
+
+    companion object appContext{
+        fun getApplicationContext():Context = getApplicationContext()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
