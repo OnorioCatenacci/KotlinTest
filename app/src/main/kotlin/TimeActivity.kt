@@ -11,6 +11,9 @@ import org.joda.time.format.DateTimeFormatter
 import org.joda.time.format.ISODateTimeFormat
 
 public class TimeActivity{
+
+    public fun GetCurrentTimeZone():DateTimeZone = DateTimeZone.getDefault()
+
     public fun GetTimesInMajorCities(cities:Array<String>):Array<CurrentTime> {
         //Set a baseline for the date time
         val utcDateTime = DateTime(DateTimeZone.UTC)
@@ -26,5 +29,10 @@ public class TimeActivity{
         )
         return timesInCities
     }
+    public fun GetCurrentTimeInDefaultTimeZone(defaultTz: DateTimeZone):String {
+        val utcDateTime = DateTime(defaultTz)
+        ISODateTimeFormat.basicTime()
+    }
 }
+
 

@@ -10,13 +10,13 @@ import android.view.View
 import android.widget.TextView
 
 
-public class MainActivity : ActionBarActivity() {
+public class MainActivity : ActionBarActivity() {  //Note varName: type declaration
 
-    companion object appContext{
-        fun getApplicationContext():Context = getApplicationContext()
+    companion object appContext{                                       //Note: companion object
+        fun getApplicationContext():Context = getApplicationContext()  //Note: function definition is inlined
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {  //Note Bundle is nullable
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val t = TimeActivity()
